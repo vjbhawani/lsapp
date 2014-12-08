@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container col-md-4" style="max-height: 500px;overflow: auto;">     
+	<div class="tree well">
+        <center>
+            <input type="text" id="search_text" name="search_text" placeholder="Enter Search word" >
+                <button type="button" class="btn btn-default" aria-label="Left Align" name="Search" id="search_but">
+                    <span class="glyphicon glyphicon glyphicon-search" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-default" aria-label="Left Align" name="Back" id="back_but">
+                    <span class="glyphicon glyphicon glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </button>
+                <div id="search_result" ></div>
+        </center>
+	   <ul>
+            <li>
+                <span id='try_quick'>
+                    <i class="icon-folder-open"></i> Parent
+                </span>
+                <div id='try'></div>
+            </li>
+      </ul>
+    </div>
+</div>
+<div class="container col-md-6">
+    <div class="btn-group" role="group" >
+        <button type="button" class="btn btn-default" id='quick'>New</button>
+        <button type="button" class="btn btn-default">Edit</button>
+        <button type="button" class="btn btn-default" id='deleteit'>Delete</button>
+    </div>
+</div>	
+<br><br><br>
+<!-- IMAGES -->
+<div class='container col-md-6' id='pic_container' style="max-height: 450px;overflow: hidden;">
+    <center>
+        <div id='pic_view1'  class="col-md-6" style="max-height: 450px;overflow: auto;">
+            This is div 1 for images
+        </div>
+        <div id='pic_view2' class="col-md-6" style="max-height: 450px;overflow: auto;">
+            This is a div2 for images 
+        </div>
+    </center>
+</div>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"/>
+<script type="text/javascript" src="/static/js/script_bac_two.js"></script>
+{% endblock %}
+{% block logout %}
+<form action="/logout" method="get" name="form">
+    <button type="submit" name="submit" class="btn btn-default" >
+    LogOut
+    </button>
+</form>
+{% endblock %}

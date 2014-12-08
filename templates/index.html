@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6" >
+            <h3>SignIn</h3>
+            <form action="/logincheck" method="post" name="form" class="form-horizontal" role="form">
+                <div class="form-group"><hr>
+                    <label class="control-label col-sm-2" for="email">username:</label>
+                        <div class="col-sm-10">
+                            <input type="text" id="username" name="username" class="form-control" />
+                        </div>
+                </div>
+                <div class="form-group"><hr>
+                    <label class="control-label col-sm-2" for="pwd">Password:</label>
+                        <div class="col-sm-10">
+                            <input type="password" id="password" name="password" class="form-control" />
+                        </div>
+                </div>
+                <div class="form-group"><hr>        
+                    <div class="col-sm-offset-2 col-sm-10" class="btn btn-default">
+                        <input type="submit" value="sign_in" class="btn btn-default" name="sign_in"/>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-6" style="border-left:3px solid black" >
+            <h3>SignUp</h3>
+            <form action="/enterDb" method="post" name="form" class="form-horizontal" role="form">
+                <div class="form-group"><hr>
+                    <label class="control-label col-sm-2" for="email">username:</label>
+                        <div class="col-sm-10">
+                            <input type="text" id="username" name="username" class="form-control" />
+                        </div>
+                </div>
+                <div class="form-group"><hr>
+                    <label class="control-label col-sm-2" for="email">emailid:</label>
+                        <div class="col-sm-10">
+                            <input type="text" id="emailid" name="emailid" class="form-control" />
+                        </div>
+                </div>
+                <div class="form-group"><hr>
+                    <label class="control-label col-sm-2" for="pwd">Password:</label>
+                        <div class="col-sm-10">
+                            <input type="password" id="password" name="password" class="form-control" />
+                        </div>
+                </div>
+                <div class="form-group"><hr>        
+                    <div class="col-sm-offset-2 col-sm-10" class="btn btn-default">
+                        <input type="submit" value="sign_up" class="btn btn-default" name="sign_up"/>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

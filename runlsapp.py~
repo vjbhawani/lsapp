@@ -1,0 +1,2 @@
+from lsapp import app
+app.debug(run=True)

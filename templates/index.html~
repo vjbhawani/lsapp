@@ -1,0 +1,5 @@
+{% extends "layout.html" %}
+{% block content %}
+<a href="signin.html">signIn</a><br><hr>
+<a href="signup.html">signUp</a><br><hr>
+{% endblock %}

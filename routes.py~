@@ -1,0 +1,50 @@
+from lsapp import app,db,User
+from flask import render_template, request, flash
+@app.route('/')
+@app.route('/index')
+def index():
+	return render_template('index.html',title='Home')
+
+@app.route('/signin')
+def signin():
+	return render_template('signin.html',title='SignIn')
+
+@app.route('/sucess',methods=['post'])
+def sucess():
+	users=User.query.all()
+	valid_user=False
+	username=request.form['username']
+	password=request.form['password']
+	for user in users:
+		if user.username==username and user.password==password:
+			valid_user=True
+			break
+	if valid_user:
+		return '''
+    <!doctype html>
+    <title>Upload new File</title>
+    <h1>Upload new File</h1>
+    <form action="/upload_file" method=post enctype=multipart/form-data>
+      <p><input type=file name=file>
+         <input type=submit value=Upload>
+    </form>
+    '''
+	else:
+		return "Invalid Username or Password.."
+		
+@app.route('/signup')
+def signup():
+	
+	return render_template('signup.html',title='SignUp')
+	
+@app.route('/enterDb',methods=['post'])
+def enterDb():
+	username=request.form['username']
+	emailid=request.form['emailid']
+	password=request.form['password']
+	u=User(username=username,emailid=emailid,password=password)
+	db.session.add(u)
+	db.session.commit()
+	users=User.query.all()
+	
+	return render_template('enterbd.html',title='enteryInDB',users=users)

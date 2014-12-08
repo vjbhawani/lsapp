@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+<form action="/userV" method="post" name="form">
+{% for i in folders %}
+    <span>
+        <button type="submit" name="submit" class="btn btn-default" aria-label="Left Align" value="{{title}}/{{i}}/{{i}}" >
+            <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
+        </button>
+        {{i}}
+    </span>
+{% endfor %}
+</form>
+{% endblock %}
+{% block logout %}
+<form action="/logout" method="get" name="form">
+    {{title}}
+    <button type="submit" name="submit" class="btn btn-default" >
+    LogOut
+    </button>
+</form>
+{% endblock %}

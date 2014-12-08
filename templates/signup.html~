@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block content %}
+<form action="/enterDb" method="post" name="form">
+username:<input type="text" name="username" id="username"/><hr>
+emailId:<input type="text" name="emailid" id="emailid"/><hr>
+password:<input type="password" name="password" id="password"/><hr>
+<input type="submit" value="Submit"/>
+</form>
+{% endblock %}
