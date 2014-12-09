@@ -8,7 +8,7 @@ import os
 import unicodedata
 
 
-UPLOAD_FOLDER = '/home/fuzzy/microblog/lsapp/static'
+UPLOAD_FOLDER = '/home/abhishek/invention/lsapp/static'
 ALLOWED_EXTENSIONS = set(['avz','zip'])
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
@@ -21,7 +21,7 @@ def index():
 def userfolders(username):
     from os import listdir
     from os.path import isfile, join
-    mypath = "/home/fuzzy/microblog/lsapp/static/"+username+"/"
+    mypath = "/home/abhishek/invention/lsapp/static/"+username+"/"
     onlyfolders = [ f for f in listdir(mypath) if not isfile(join(mypath,f)) ]
     return onlyfolders
 
@@ -91,7 +91,7 @@ def jsondata(sqlite_path):
         jsonList.append(oneE)
     jsonfile=json.dumps(jsonList)
     print jsonfile'''
-    dbPath = '/home/fuzzy/microblog/lsapp/static/userone/one/one.sqlite'
+    dbPath = '/home/abhishek/invention/lsapp/static/userone/one/one.sqlite'
     engine = create_engine('sqlite:///%s' % sqlite_path, echo=False)
     metadata = MetaData(engine)
     moz_bookmarks = Table('ZPICMODEDICT', metadata, autoload=True)
@@ -113,7 +113,7 @@ def jsondata(sqlite_path):
 
 @app.route('/userV',methods=['POST'])
 def userV():
-    dbPath='/home/fuzzy/microblog/lsapp/static/'+request.form['submit']+'.sqlite'
+    dbPath='/home/abhishek/invention/lsapp/static/'+request.form['submit']+'.sqlite'
     session['sqlite_path']=dbPath
     return render_template('userV.html',title=session['username'],folders=userfolders(session['username']))
 
