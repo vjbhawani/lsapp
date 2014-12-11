@@ -73,7 +73,7 @@ img {
 }
 #pic_view1 ul {
     padding-right: 10px;
-    height: 180px;
+    height: 400px;
     width: 780px;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -95,9 +95,73 @@ img {
 }
 .figures span {
     display: block;
-    margin-left: 33px;
+    margin-left: 27px;
+    width: 60px;
+    height: 20px;
+    overflow: hidden;
+    overflow-wrap: break-word;
 }
 .tick {
     margin-left: 30px;
     float: right;
+}
+#save  #undo{
+    float: right;
+}
+
+.hide{
+    display: inline-block;
+    border-style: outset;
+    width: 102px;
+    padding-right: 3px;
+    float: left;
+    height: 90px;
+    opacity: 0.2;
+
+}
+
+
+
+.close:hover { background: #00d9ff; }
+
+a{
+color: #191919;
+    text-decoration: none;
+}
+
+.left_float{
+float: left;
+    width: 328px;
+}
+
+.right_float{
+float: right;
+width: 214px;
+}
+
+#edit_modal{
+    
+    height: 300px;
+
+
+}
+
+.edit_sent{
+float: right;
+    width: 100px;
+}
+
+#content_result{
+width: 266px;
+    height: 189px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.small_img_res{
+
+    width : 84px;
+    height: 84px;
+    padding: 3px;
+
 }

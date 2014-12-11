@@ -23,10 +23,20 @@
 </div>
 <div class="container col-md-6">
     <div class="btn-group" role="group">
-        <button type="button" class="btn btn-default" id='quick'>New</button>
-        <button type="button" class="btn btn-default">Edit</button>
+        <button type="button" class="btn btn-default" id='quick'><a role="button" href="#myModalnew" data-toggle="modal">New</a></button>
+        <button type="button" class="btn btn-default" id='edit'><a role="button" href="#myModaledit" data-toggle="modal">Edit</a></button>
         <button type="button" class="btn btn-default" id='deleteit'>Delete</button>
+         <button type="button" class="btn btn-default" id='hideit'>Hide/Show</button>
+        <button type="button" class="btn btn-default" id='copy'>Copy</button>
+          <button type="button" class="btn btn-default" id='paste'>Paste</button>
+        
+        
+        
     </div>
+    <button type="button" class="btn btn btn-success" id='undo'>Undo</button>
+    <button type="button" class="btn btn btn-success" id='save'>Save Changes</button>
+    
+   
 </div>
 <br>
 <br>
@@ -37,17 +47,99 @@
     <div id='pic_view1'>
         This is div 1 for images
     </div>
-    <hr>
+   <!-- <hr>
     <br>
     <div id='pic_view2'>
         This is a div2 for images
-    </div>
+    </div>-->
 
 </div>
+
+
+<!--
+div for  edit menu
+-->
+<div id="myModaledit" class="modal fade">
+    <div class="modal-dialog">
+        <div id="edit-content" class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Edit</h4>
+            </div>
+            <div id='edit_modal' class="modal-body">
+                <div class="container left_float" >
+                <div class="container">
+               <div id="branding"  style="float: left;"></div><br />
+               <div  id="content_result" style="overflow:scroll">Enter search query</div>
+                   </div> 
+                    <input type="text" class="search_img" placeholder="Image search" id="img_query"/>
+                   <button type="button" class="btn btn-default" id='search_img'>Search</button><br>
+                    
+                    <center>--OR--<br><input type="file" id="my_img"></center>
+                </div>
+                
+                <div class="container right_float">
+                
+              <input id="edit_name" class="right_float" type="text" placeholder="name"/><br><br>
+                <input id="edit_partofspeech" class="right_float" type="text" placeholder="Part of speech"/><br><br>
+                 <input id="edit_color" class="right_float" type="text" placeholder="Color"/><br><br>
+               
+                <span style="float:left;margin-left: -29px;">Sentence Box :</span><div  class="btn-group btn-toggle edit_sent"  > 
+                    <button class="btn btn-xs btn-default">ON</button>
+                    <button class="btn btn-xs btn-primary active">OFF</button>
+                </div>
+                <br><br>
+           <input id="edit_name" class="right_float" type="text" placeholder="Picture"/><br><br>
+              <input id="edit_name" class="right_float" type="text" placeholder="Audio"/><br><br>
+                
+               </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="edit_save">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+	
+
+<!--div for new menu -->
+
+<div id="myModalnew" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">New</h4>
+            </div>
+            <div id='new_modal' class="modal-body">
+              <span class="left_float">Name :</span><input id="new_name" class="right_float" type="text" placeholder="name"/><br><br>
+                <span class="left_float">Filetype :</span><input id="new_type" class="right_float" type="text" placeholder="categorty or template"/><br><br>
+                <span class="left_float">Parent ID :</span><input id="new_type" class="right_float" type="text" placeholder="parent id "/><br><br>
+               <span class="left_float">Part Of Speech :</span> <input id="new_partofspeech" class="right_float" type="text" placeholder="Part of speech"/><br><br>
+                <span class="left_float">Color :</span> <input id="new_color" class="right_float" type="text" placeholder="Color"/><br><br>
+                 <span class="left_float">Hidden</span> <input id="new_isenabled" class="right_float" type="text" placeholder="is enabled"/><br><br>
+            <span class="left_float">Picture :</span><input id="new_name" class="right_float" type="text" placeholder="Picture"/><br><br>
+               <span class="left_float">Audio :</span> <input id="new_name" class="right_float" type="text" placeholder="Audio"/><br><br>
+                
+               
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="new_save">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
-<script type="text/javascript" src="/static/js/script_bac_two.js"></script>
-<script type="text/javascript" src="/static/js/underscore_min.js"></script>
-<script type="text/javascript" src="/static/js/bootbox.min.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/google_search.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/underscore_min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/script_bac_two.js') }}"></script>
 
 {% endblock %} {% block logout %}
 <form action="/logout" method="get" name="form">
